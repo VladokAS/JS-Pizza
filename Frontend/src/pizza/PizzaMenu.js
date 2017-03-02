@@ -7,8 +7,22 @@ var Pizza_List = require('../Pizza_List');
 
 //HTML елемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
+var $array = ["#all", "#meat", "#ananas","#mush", "#sea", "#vega"];
 
 $("#all").click(function () {
+    $("#loki").text("Усі піци");
+
+
+    $("#all").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#all"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
+
     showPizzaList(Pizza_List);
 });
 
@@ -25,6 +39,19 @@ $("#meat").click(function () {
     });
 
     //Показати відфільтровані піци
+
+    $("#loki").text("М'ясні піци ");
+
+
+    $("#meat").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#meat"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
     showPizzaList(pizza_shown);
 });
 
@@ -41,6 +68,18 @@ $("#ananas").click(function () {
     });
 
     //Показати відфільтровані піци
+
+    $("#loki").text("Піци з ананасами ");
+
+    $("#ananas").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#ananas"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
     showPizzaList(pizza_shown);
 });
 $("#mush").click(function () {
@@ -56,6 +95,18 @@ $("#mush").click(function () {
     });
 
     //Показати відфільтровані піци
+
+    $("#loki").text("Піци з грибами ");
+
+    $("#mush").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#mush"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
     showPizzaList(pizza_shown);
 });
 $("#sea").click(function () {
@@ -71,6 +122,18 @@ $("#sea").click(function () {
     });
 
     //Показати відфільтровані піци
+
+    $("#loki").text("Піци з морепродуктами ");
+
+    $("#sea").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#sea"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
     showPizzaList(pizza_shown);
 });
 
@@ -87,6 +150,20 @@ $("#vega").click(function () {
     });
 
     //Показати відфільтровані піци
+
+    $("#loki").text("Вегетеріанські піци ");
+
+
+    $("#vega").css("background-color","#f0ad4e");
+    $(this).css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#vega"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    });
+
     showPizzaList(pizza_shown);
 });
 
@@ -118,6 +195,7 @@ function showPizzaList(list){
     list.forEach(showOnePizza);
 }
 
+//Шаблон
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
@@ -137,6 +215,16 @@ function filterPizza(filter) {
 
 function initialiseMenu() {
     //Показуємо усі піци
+    $("#all").css("background-color","#f0ad4e");
+    $("#all").css("color","white");
+    $array.forEach(function (index) {
+        if(index !== "#all"){
+            $(index).css("background-color","transparent");
+            $(index).css("color","black");
+            $(index).css("border-color","transparent");
+        }
+    })
+
     showPizzaList(Pizza_List)
 }
 
