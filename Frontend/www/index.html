@@ -10,62 +10,76 @@
     <!-- LESS основний файл -->
     <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
     <!-- LESS JavaScript компілятор -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <script src="assets/less/pizza/less-compiler.js"></script>
 
 
 </head>
 <body>
-<div id="cart"></div>
-<div class="container">
-    <div class="row" id="pizza_list">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default">Button 1</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_2.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 3</a>
-                        <a href="#" class="btn btn-default">Button 4</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_3.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 5</a>
-                        <a href="#" class="btn btn-default">Button 6</a>
-                    </p>
-                </div>
-            </div>
+<div class="menu">
+    <div class="menu_row">
+        <div class="col-lg-3 col-md-4 col-xs-6" id="tel">(044)222 5 222</div>
+        <div class="col-lg-3 col-md-4  menu-text" id="24g">24 години/7 днів на тиждень</div>
+        <div class="col-lg-3 menu-text" id="free">Безкоштовна доставка піци</div>
+        <div class="col-lg-3 col-md-4 col-xs-6 text-center">
+            <button type="button" class="btn btn-warning" id="voity" align="center">Ввійти</button>
         </div>
     </div>
+
+    <div class="menu_row">
+        <div id="piza-label">
+            <p class="lead">Піца</p>
+        </div>
+    </div>
+</div>
+
+<img id="logo" src="assets/images/logo.svg">
+<img id="salary-logo" src="assets/images/logo-salary.png">
+
+
+<div id="wall">
+    <div class="container-fluid text-center" id="labels">
+        <h2><b>Усі піци </b><span class="num-of-pizzas"></span></h2>
+        <button type="button" class="btn btn-warning" id="all">Усі</button>
+        <button type="button" class="btn btn-link" id="meat">М'ясні</button>
+        <button type="button" class="btn btn-link" id="ananas">З ананасами</button>
+        <button type="button" class="btn btn-link" id="mush">З грибами</button>
+        <button type="button" class="btn btn-link" id="sea">З морепродуктами</button>
+        <button type="button" class="btn btn-link" id="vega">Вега</button>
+    </div>
+
+    <div class="container-fluid" id="pizza_list">
+
+    </div>
+</div>
+
+<div class="order">
+    <div class="order-label">
+        <div class="col-xs-7 container-fluid" id="zamov">
+            <b>
+                <div id="za">Замовлення</div>
+                <div id="num-of-orders">3</div>
+            </b>
+        </div>
+
+        <div class="col-xs-5 text-center" id="clear-zam">
+            Очистити замовлення
+        </div>
+    </div>
+
+    <div id="cart">
+
+    </div>
+
+    <div class="check">
+        <div class="sum">
+            <div class="col-xs-6 text-center"><b>Сума замовлення</b></div>
+            <div class="col-xs-6" id="price"><b>1024 грн</b></div>
+        </div>
+        <div class="check-but">
+            <button type="button" class="btn btn-warning btn-block" id="but"><b>Замовити</b></button>
+        </div>
+    </div>
+
 </div>
 
 <!-- jQuery JavaScript -->
@@ -75,6 +89,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Own JavaScript -->
-<!--<script type="text/javascript"  src="assets/js/main.js"> </script>-->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
 </body>
 </html>
