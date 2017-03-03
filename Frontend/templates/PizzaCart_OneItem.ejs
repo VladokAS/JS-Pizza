@@ -8,17 +8,18 @@
             (Велика)
             <%}%>
         </h4>
-        <div style="color:#000000">
+        <div style="color: black" class="col-xs-12" id="size/weight/price">
             <div class="col-xs-3 text-center"><img src="assets/images/size-icon.svg"><%= pizza[size].size %></div>
             <div class="col-xs-3 text-center"><img src="assets/images/weight.svg"> <%= pizza[size].weight %></div>
-            <div class="col-xs-6 "><h4><b><%= pizza[size].price %> грн.</b></h4></div>
+            <h5><b><div class="col-xs-6" id="pizza-price"><%= pizza[size].price %> грн.</div></b></h5>
         </div>
+
         <div>
             <span><button class="btn btn-danger minus">-</button></span>
             <span class="label label-default"><%= quantity %></span>
             <button class="btn btn-success plus">+</button>
+            <button type="button" class="col-xs-offset-2 btn btn-info removeB">X</button>
         </div>
-
     </div>
     <div class="col-xs-3">
         <img id="card-img" src="<%= pizza.icon %>">

@@ -9,6 +9,9 @@ var PizzaSize = {
     Small: "small_size"
 };
 
+var num_of_pizzas = 0;
+var summa = 0;
+
 //Змінна в якій зберігаються перелік піц в кошику
 var Cart = [];
 
@@ -19,12 +22,23 @@ function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
 
     //Приклад реалізації, можна робити будь-яким іншим способом
+    var numer = -1;
+    Cart.forEach(function (pizzon) {
+        if(pizzon.pizza.title == pizza.title && pizzon.size == size){
+            numer = Cart.indexOf(pizzon);
+        }
 
+    });
+    if(numer < 0){
         Cart.push({
             pizza: pizza,
             size: size,
-            quantity: 1
+            quantity: 1,
+            price: pizza[size].price
         });
+    }else{
+        Cart[numer].quantity +=1;
+    }
 
     //Оновити вміст кошика на сторінці
     updateCart();
@@ -34,12 +48,16 @@ function removeFromCart(cart_item) {
     //Видалити піцу з кошика
     //TODO: треба зробити
 
-    //Після видалення оновити відображення
-    updateCart();
+    for(var i = Cart.length - 1; i >= 0; i--) {
+        if(Cart[i].price == cart_item.price && Cart[i].pizza.title == cart_item.pizza.title) {
+            Cart.splice(i, 1);
+        }
+    }
+
 }
 
 function initialiseCart() {
-    //Фукнція віпрацьвуватиме при завантаженні сторінки
+    //Фукнція віпрацьовуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
     //TODO: ...
 
@@ -52,12 +70,14 @@ function getPizzaInCart() {
 }
 
 function updateCart() {
+    
     //Функція викликається при зміні вмісту кошика
     //Тут можна наприклад показати оновлений кошик на екрані та зберегти вміт кошика в Local Storage
 
     //Очищаємо старі піци в кошику
     $cart.html("");
-
+    num_of_pizzas = 0;
+    summa = 0;
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
@@ -77,17 +97,46 @@ function updateCart() {
             if(cart_item.quantity > 1) {
                 cart_item.quantity -= 1;
             }
+            else{
+                removeFromCart(cart_item);
+            }
             //Оновлюємо відображення
             updateCart();
         });
 
+        $node.find(".removeB").click(function(){
+            removeFromCart(cart_item);
+            //Оновлюємо відображення
+            updateCart();
+        });
 
+        var pizza_price = cart_item.quantity*cart_item.price;
+        $node.find("#pizza-price").text(pizza_price+" грн.");
+        num_of_pizzas += cart_item.quantity;
+        summa += cart_item.quantity*cart_item.price;
         $cart.append($node);
     }
 
     Cart.forEach(showOnePizzaInCart);
+    $("#num-of-orders").text(num_of_pizzas);
+    $("#price").text(summa+" грн");
+
+    if(Cart.length == 0){
+        $("#cart").html('<div class="fridge-is-empty text-center">Пусто в холодильнику?<br>Замовте Піцу!</div>');
+        $("#but").prop("disabled",true);
+    }else {
+        $("#but").prop("disabled",false);
+    }
+
 
 }
+
+
+$("#clear-zam").click(function () {
+   Cart = [];
+
+   updateCart();
+});
 
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;
