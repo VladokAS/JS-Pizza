@@ -223,7 +223,7 @@ function initialiseMenu() {
             $(index).css("color","black");
             $(index).css("border-color","transparent");
         }
-    })
+    });
 
     showPizzaList(Pizza_List)
 }
