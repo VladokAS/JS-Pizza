@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Order</title>
+
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- LESS основний файл -->
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
+    <!-- LESS JavaScript компілятор -->
+    <script src="assets/less/pizza/less-compiler.js"></script>
+
+
+</head>
+<body>
+<div class="menu">
+    <div class="menu_row">
+        <div class="col-lg-3 col-md-4 col-xs-6" id="tel">(044)222 5 222</div>
+        <div class="col-lg-3 col-md-4  menu-text" id="24g">24 години / 7 днів на тиждень</div>
+        <div class="col-lg-3 menu-text" id="free">Безкоштовна доставка піци</div>
+        <div class="col-lg-3 col-md-4 col-xs-6 text-center">
+            <button type="button" class="btn btn-warning" id="voity" align="center">Ввійти</button>
+        </div>
+    </div>
+
+    <div class="menu_row">
+        <div id="piza-label">
+            <p class="lead">Піца</p>
+        </div>
+    </div>
+</div>
+
+<img id="logo" src="assets/images/logo.svg">
+<img id="sale-logo" src="assets/images/logo-salary.png">
+
+
+<div id="wall">
+
+    <div class="container-fluid contacts-and-info">
+
+        <div class="col-xs-7 contacts">
+            <h3>1. Контактні дані</h3>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ім'я</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="П.І.Б.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Телефон</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" placeholder="+380199812100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Адреса</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" placeholder="New York, Wall Street, 16a">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-xs-5 bs-callout">
+            <h4>Інформація про замовлення</h4>
+            <p class="summery-time">
+                <b>Приблизний час доставки:</b> -
+            </p>
+            <p class="summery-adress">
+                <b>Адреса: </b>-
+            </p>
+        </div>
+        <button type="button" class="col-xs-2 col-xs-offset-9 btn btn-success" id="success-button">
+            Далі
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <div class="map-div">
+        <div class="col-xs-10 col-xs-offset-1" id="map"></div>
+        <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: {lat: 50.464384, lng: 30.519128}
+            });
+
+            var image = 'assets/images/map-icon.png';
+            var beachMarker = new google.maps.Marker({
+                animation: google.maps.Animation.BOUNCE,
+                position: {lat: 50.464384, lng: 30.519128},
+                map: map,
+                icon: image
+            });
+        }
+        </script>
+    </div>
+
+    <div class="container-fluid text-center" id="footer">
+        Роботу виконав Владислав Сапальов<br>
+        Доставка піци не здійснюється
+    </div>
+
+</div>
+
+<div class="order">
+    <div class="order-label">
+        <div class="col-xs-7 container-fluid" id="zamov">
+            <b>
+                <div id="za">Замовлення</div>
+                <div id="num-of-orders"></div>
+            </b>
+        </div>
+    </div>
+
+    <div id="cart">
+
+    </div>
+
+    <div class="check">
+        <div class="sum">
+            <div class="col-xs-6 text-center"><b>Сума замовлення</b></div>
+            <b><div class="col-xs-6" id="price">0 грн</div></b>
+        </div>
+        <div class="check-but">
+            <button type="button" class="btn btn-info btn-block" id="but"><b>Редагувати замовлення</b></button>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+
+<!--Bootsrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--Google Map-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM3trfoQJLoUl8ovB4gNSpHmokKhduXLk&callback=initMap"></script>
+
+<!--Own JavaScript -->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
+</body>
+</html>

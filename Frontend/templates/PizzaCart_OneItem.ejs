@@ -1,28 +1,23 @@
 <div class="app">
     <div class="col-xs-9" id="info-pizza">
-        <h4>
+        <div><h4>
             <%= pizza.title %>
             <%if(size == "small_size") {%>
                 (Мала)
             <%}else{%>
             (Велика)
             <%}%>
-        </h4>
-        <div style="color: black" class="col-xs-12" id="size/weight/price">
+            </h4>
+        </div>
+
+        <div style="color: black" class="col-xs-12" id="size-weight-price">
             <div class="col-xs-3 text-center"><img src="assets/images/size-icon.svg"><%= pizza[size].size %></div>
-            <div class="col-xs-3 text-center"><img src="assets/images/weight.svg"> <%= pizza[size].weight %></div>
+            <div class="col-xs-3 text-center"><img src="assets/images/weight.svg"><%= pizza[size].weight %></div>
             <h5><b><div class="col-xs-6" id="pizza-price"><%= pizza[size].price %> грн.</div></b></h5>
         </div>
 
-        <div>
-            <div class="col-xs-3">
-                <button class="btn btn-danger minus">-
-                    <!--<div class="col-xs-12 sign-minus">-</div>-->
-                </button>
-            </div>
-            <span class="label label-default"><%= quantity %></span>
-            <button class="btn btn-success plus">+</button>
-            <button type="button" class="col-xs-offset-2 btn btn-info removeB">X</button>
+        <div class="col-xs-12 minus-plus-delete">
+
         </div>
     </div>
     <div class="col-xs-3">
