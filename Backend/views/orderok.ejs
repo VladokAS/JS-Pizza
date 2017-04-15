@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- LESS основний файл -->
-    <link rel="stylesheet/less" type="text/css" href="./Frontend/www/assets/less/main.less" />
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>
     <!-- LESS JavaScript компілятор -->
-    <script src="./Frontend/www/assets/less/pizza/less-compiler.js"></script>
+    <script src="assets/less/pizza/less-compiler.js"></script>
 
 
 </head>
@@ -32,72 +32,72 @@
     </div>
 </div>
 
-<img id="logo" src="../../Frontend/www/assets/images/logo.svg">
-<img id="sale-logo" src="../../Frontend/www/assets/images/logo-salary.png">
+<img id="logo" src="assets/images/logo.svg">
+<img id="sale-logo" src="assets/images/logo-salary.png">
 
 
 <div id="wall">
 
     <div class="container-fluid contacts-and-info">
 
-        <div class="col-xs-7 contacts">
+        <div class="col-xs-12 col-md-7 contacts">
             <h3>1. Контактні дані</h3>
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Ім'я</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="П.І.Б.">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Телефон</label>
-                    <div class="col-sm-10">
-                        <input type="tel" class="form-control" placeholder="+380199812100">
+                        <a href="#" data-toggle="tooltip" title="Введіть власне ім’я, без цифр">
+                            <input type="text" class="form-control" placeholder="П.І.Б." id="PIB">
+                        </a>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Адреса</label>
                     <div class="col-sm-10">
-                        <input type="tel" class="form-control" placeholder="New York, Wall Street, 16a">
+                        <a href="#" data-toggle="tooltip" title="Введіть адресу доставки">
+                            <input class="form-control" id="adress" placeholder="New York, Wall Street, 16a">
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Телефон</label>
+                    <div class="col-sm-10">
+                        <a href="#" data-toggle="tooltip" title="Введіть номер телефону">
+                            <input type="number" class="form-control" id="telephone" placeholder="+380199812100">
+                        </a>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div class="col-xs-5 bs-callout">
+        <div class="col-xs-12 col-md-5 bs-callout">
             <h4>Інформація про замовлення</h4>
             <p class="summery-time">
-                <b>Приблизний час доставки:</b> -
+                <b>Приблизний час доставки: <span class="time">-</span></b>
             </p>
             <p class="summery-adress">
-                <b>Адреса: </b>-
+                <b>Адреса: <span class="ad">-</span></b>
             </p>
         </div>
-        <button type="button" class="col-xs-2 col-xs-offset-9 btn btn-success" id="success-button">
+        <button type="button" class="col-xs-3 col-md-2 col-xs-offset-9 btn btn-success" id="success-button">
             Далі
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         </button>
     </div>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                ...
+            </div>
+        </div>
+    </div>
 
     <div class="map-div">
         <div class="col-xs-10 col-xs-offset-1" id="map"></div>
-        <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: {lat: 50.464384, lng: 30.519128}
-            });
-
-            var image = 'assets/images/map-icon.png';
-            var beachMarker = new google.maps.Marker({
-                animation: google.maps.Animation.BOUNCE,
-                position: {lat: 50.464384, lng: 30.519128},
-                map: map,
-                icon: image
-            });
-        }
-        </script>
     </div>
+    <script>
+
+    </script>
 
     <div class="container-fluid text-center" id="footer">
         Роботу виконав Владислав Сапальов<br>
@@ -123,25 +123,37 @@
     <div class="check">
         <div class="sum">
             <div class="col-xs-6 text-center"><b>Сума замовлення</b></div>
-            <b><div class="col-xs-6" id="price">0 грн</div></b>
+            <b>
+                <div class="col-xs-6" id="price">0 грн</div>
+            </b>
         </div>
         <div class="check-but">
-            <button type="button" class="btn btn-info btn-block" id="but"><b>Редагувати замовлення</b></button>
+
+            <a href="index.html" style="text-decoration:none">
+                <button type="button" class="btn btn-info btn-block" id="but"><b>Редагувати замовлення</b></button>
+            </a>
         </div>
     </div>
 
 </div>
 
+<!-- місце для віджету LIQPAY-->
+<div id="liqpay"></div>
+<!-- піключаємо скрипт -->
+<script src="//static.liqpay.com/libjs/checkout.js"></script>
+
+
 <!-- jQuery JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 <!--Bootsrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Google Map-->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM3trfoQJLoUl8ovB4gNSpHmokKhduXLk&callback=initMap"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM3trfoQJLoUl8ovB4gNSpHmokKhduXLk"></script>
 
 <!--Own JavaScript -->
-<script type="text/javascript"  src="./Frontend/www/assets/js/main.js"> </script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

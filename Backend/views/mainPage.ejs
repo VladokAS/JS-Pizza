@@ -1,7 +1,54 @@
 <% include common/header.ejs %>
+<div id="wall">
+    <div class="container-fluid text-center" id="labels">
+        <h2><b><span id="loki">Усі піци </span></b><span class="num-of-pizzas"></span></h2>
+        <button type="button" class="btn btn-default" id="all">Усі</button>
+        <button type="button" class="btn btn-default" id="meat">М'ясні</button>
+        <button type="button" class="btn btn-default" id="ananas">З ананасами</button>
+        <button type="button" class="btn btn-default" id="mush">З грибами</button>
+        <button type="button" class="btn btn-default" id="sea">З морепродуктами</button>
+        <button type="button" class="btn btn-default" id="vega">Вега</button>
+    </div>
 
-<div class="">
-    <h1>Main Page Content</h1>
+    <div class="container-fluid" id="pizza_list">
+
+    </div>
+    <div class="container-fluid text-center" id="footer">
+        Роботу виконав Владислав Сапальов<br>
+        Доставка піци не здійснюється
+    </div>
+</div>
+
+<div class="order">
+    <div class="order-label">
+        <div class="col-xs-7 container-fluid" id="zamov">
+            <b>
+                <div id="za">Замовлення</div>
+                <div id="num-of-orders"></div>
+            </b>
+        </div>
+
+        <div class="col-xs-5 btn btn-link text-center" id="clear-zam">
+            Очистити замовлення
+        </div>
+    </div>
+
+    <div id="cart">
+
+    </div>
+
+    <div class="check">
+        <div class="sum">
+            <div class="col-xs-6 text-center"><b>Сума замовлення</b></div>
+            <b><div class="col-xs-6" id="price">0 грн</div></b>
+        </div>
+        <div class="check-but">
+            <a href="order.html" style="text-decoration:none">
+                <button type="button" class="btn btn-warning btn-block" id="but"><b>Замовити</b></button>
+            </a>
+        </div>
+    </div>
+
 </div>
 
 <% include common/footer.ejs %>

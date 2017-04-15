@@ -167,6 +167,8 @@ $("#vega").click(function () {
     showPizzaList(pizza_shown);
 });
 
+$("#za").click("order.html");
+
 
 function showPizzaList(list){
         //Очищаємо старі піци в кошику
@@ -225,7 +227,7 @@ function initialiseMenu() {
         }
     });
 
-    showPizzaList(Pizza_List)
+    showPizzaList(Pizza_List);
 }
 
 
