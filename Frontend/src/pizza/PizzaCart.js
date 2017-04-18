@@ -42,6 +42,7 @@ function addToCart(pizza, size) {
     }
 
     //Оновити вміст кошика на сторінці
+    exports.cart = Cart;
     updateCart();
 }
 
@@ -128,7 +129,7 @@ function updateCart() {
 
     Cart.forEach(showOnePizzaInCart);
     $("#num-of-orders").text(num_of_pizzas);
-    $("#price").text(summa+" грн");
+    $("#pricek").text(summa);
 
     if(Cart.length == 0){
         $("#cart").html('<div class="fridge-is-empty text-center">Пусто в холодильнику?<br>Замовте Піцу!</div>');

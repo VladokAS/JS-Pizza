@@ -15,16 +15,16 @@ exports.createOrder = function (req, res) {
         version: 3,
         public_key: "i76156277120",
         action: "pay",
-        amount: 568.00,
+        amount: order_info.price,
         currency: "UAH",
-        description: "Опис транзакції",
+        description: "Опис транзакції: "+order_info.name + ", Адреса: " + order_info.adress +
+                        ", Тел: "+order_info.number + ", Піци: " + order_info.pizzas,
         order_id: Math.random(),
 //!!!Важливо щоб було 1,	бо інакше візьме гроші!!!
         sandbox: 1
     };
     var data = base64(JSON.stringify(order));
     var signature = sha1("uZF9dhnXMmeMRKKRAB2X5KsFMALYEvGvPhODdAog" + data + "uZF9dhnXMmeMRKKRAB2X5KsFMALYEvGvPhODdAog");
-
 
     res.send({
         success: true,
