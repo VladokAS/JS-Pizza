@@ -11,11 +11,12 @@ $(function () {
     PizzaCart.initialiseCart();
     PizzaMenu.initialiseMenu();
 
-
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
+        $(".minus-plus-delete").hide();
+        $("#wall").height($(window).height());
+        $("#map").height($(window).height() - 410); // меняет высоту карты после аплоада страницы (нужен аплоад)
     });
-
 
     $('#success-button').click(function () {
         var Card = require("./pizza/PizzaCart");

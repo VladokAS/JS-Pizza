@@ -2,16 +2,20 @@
 
 @import "pizza/pizza-card";
 
+body {
+  background-color: #faf9d2;
+}
+
 @menu-height: 75px;
 
-.menu{
-  @menu-color:black;
+.menu {
+  @menu-color: black;
 
   margin-top: 0;
   position: fixed;
   width: 75%;
   height: @menu-height;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
 
   z-index: 1;
@@ -21,34 +25,34 @@
     height: @menu-height/2;
     float: right;
 
-    #tel{
+    #tel {
       padding: 5px;
       font-size: 20px;
     }
 
-    .menu-text{
+    .menu-text {
       height: 100%;
       padding-top: 10px;
       padding-left: 0%;
       font-size: 12px;
     }
-    #piza-label{
+    #piza-label {
       border-top: double white 3px;
     }
-    #voity{
+    #voity {
       background-color: rgb(234, 194, 74);
     }
   }
 }
 
-#logo{
+#logo {
   position: fixed;
   left: 2%;
   top: 0;
   z-index: 2;
 }
 
-#sale-logo{
+#sale-logo {
   opacity: 0.7;
   position: fixed;
   left: 2%;
@@ -58,22 +62,23 @@
   z-index: 2;
   transition: opacity 1s ease;
 }
-#sale-logo:hover{
-  opacity:1;
+
+#sale-logo:hover {
+  opacity: 1;
 }
 
-.btn-default{
+.btn-default {
   border: none;
 }
 
-#wall{
+#wall {
   width: 75%;
   background-color: #faf9d2;
 
-  #labels{
+  #labels {
     padding-top: @menu-height;
 
-    .num-of-pizzas{
+    .num-of-pizzas {
       width: 30px;
       display: inline-block;
       background-color: orange;
@@ -81,20 +86,20 @@
       border-radius: 50px;
     }
   }
-  #pizza_list{
+  #pizza_list {
     padding-top: 20px;
     z-index: 0;
 
-    .thumbnail{
+    .thumbnail {
       position: relative;
       height: 550px;
 
-      #new-or-pop{
+      #new-or-pop {
         top: -15px;
         right: 10px;
         position: absolute;
       }
-      .caption{
+      .caption {
         .title {
           font-size: 25px;
           color: #ec6a1c;
@@ -114,38 +119,28 @@
           text-overflow: ellipsis;
         }
       }
-      .capture{
+      .capture {
         height: 150px;
       }
     }
   }
 
-  .map-div{
+  .map-div {
     height: 300px;
-    #map{
+    #map {
       margin-top: 25px;
-      height: 250px;
+      //height: 250px;
     }
   }
 
-  #footer{
-    width: 100%;
-    border-top: solid black 1px;
-    padding-top: 20px;
-    height: 100px;
-    background-color: #c6eacc;
-    font-size: 15px;
-    font-family: "Segoe UI";
-  }
-
-  .contacts-and-info{
+  .contacts-and-info {
     padding-top: @menu-height+50px;
 
-    .contacts{
+    .contacts {
 
     }
 
-    .bs-callout{
+    .bs-callout {
       background-color: azure;
       padding: 20px;
       margin: 20px 0;
@@ -158,30 +153,41 @@
   }
 }
 
-.btn-default{
+#footer {
+  width: 75%;
+  border-top: solid black 1px;
+  height: 20px;
+  background-color: #c6eacc;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  position: fixed;
+  bottom: 0;
+}
+
+.btn-default {
   background-color: transparent;
 }
 
-.order{
+.order {
   position: fixed;
   top: 0;
   right: 0;
   width: 25%;
   height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 
   .order-label {
     height: @menu-height;
     background-color: floralwhite;
 
-    #zamov{
+    #zamov {
       padding-top: 20px;
-      #za{
+      #za {
         font-size: 20px;
         display: inline-block;
       }
 
-      #num-of-orders{
+      #num-of-orders {
         display: inline-block;
         background-color: orange;
         color: white;
@@ -191,27 +197,27 @@
       }
     }
 
-    #clear-zam{
+    #clear-zam {
       font-size: 10px;
       padding-top: @menu-height/2-10px;
     }
   }
 
-  #cart{
+  #cart {
     width: 100%;
     height: 70%;
     background-color: aqua;
     overflow-y: auto;
     overflow-x: hidden;
 
-    .fridge-is-empty{
-        padding-top: 20%;
-        font-family: "Segoe UI";
-        font-size: 20px;
+    .fridge-is-empty {
+      padding-top: 20%;
+      font-family: "Segoe UI";
+      font-size: 20px;
 
     }
 
-    .app{
+    .app {
       @app-height: 120px;
 
       border: groove 2px #c6eacc;
@@ -220,47 +226,45 @@
       background-color: #ffffff;
       margin-bottom: 1px;
 
-      #info-pizza{
+      #info-pizza {
         height: 100%;
         color: #ec6a1c;
 
-        #size-weight-price{
+        #size-weight-price {
           height: 30%;
-          background-color: yellow;
 
         }
 
-        .minus-plus-delete{
+        .minus-plus-delete {
           margin-top: 2%;
           height: 30%;
 
-          background-color: blue;
         }
       }
 
-      #card-img{
+      #card-img {
         height: @app-height - 4px;
       }
     }
   }
 
-  .check{
+  .check {
     width: 100%;
     height: 30%;
     background-color: floralwhite;
 
-    .sum{
+    .sum {
       width: 100%;
       height: 30%;
       font-size: 20px;
       text-align: center;
 
-      #price{
+      #price {
         padding-top: 20px;
       }
     }
 
-    .check-but{
+    .check-but {
       padding-left: 5%;
       padding-right: 5%;
       width: 100%;
@@ -277,23 +281,23 @@ input::-webkit-inner-spin-button {
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-@media only screen and (min-width: 1440px){
-  #wall{
+@media only screen and (min-width: 1440px) {
+  #wall {
     padding-right: 100px;
     padding-left: 100px;
   }
 
-  .order .check{
-    .sum{
+  .order .check {
+    .sum {
       padding-top: 5%;
       font-size: 30px;
     }
-    .check-but{
+    .check-but {
       padding-top: 5%;
       padding-left: 10%;
       padding-right: 10%;
       height: 30%;
-      #but{
+      #but {
         height: 80%;
         font-size: 20px;
       }
@@ -302,10 +306,11 @@ input::-webkit-inner-spin-button {
 
 }
 
-@media only screen and (max-width: 1200px){
-  #free{
+@media only screen and (max-width: 1200px) {
+  #free {
     display: none;
   }
+
   .check {
 
     .sum {
@@ -317,36 +322,41 @@ input::-webkit-inner-spin-button {
 
     }
   }
-  .order .order-label #zamov #za{
+
+  .order .order-label #zamov #za {
     font-size: 15px;
   }
 }
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 992px) {
   @menu-width: 60%;
-  .menu{
+  .menu {
     width: @menu-width;
-    .menu_row{
+    .menu_row {
       width: 70%;
 
-      .menu-text{
+      .menu-text {
         display: none;
       }
     }
 
   }
 
-  #wall{
+  #wall {
     width: @menu-width;
   }
 
-  .order{
+  #footer {
+    width: @menu-width;
+  }
+
+  .order {
     width: 40%;
     @main-font: 15px;
 
-    .check{
+    .check {
 
-      .sum{
+      .sum {
         font-size: @main-font;
       }
     }
@@ -354,43 +364,47 @@ input::-webkit-inner-spin-button {
 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   @small-width: 50%;
-  .menu{
+  .menu {
     width: @small-width;
 
-    .menu_row{
+    .menu_row {
       width: 65%;
 
-      #tel{
+      #tel {
         font-size: 15px;
       }
     }
   }
-  #wall{
+
+  #wall {
+    width: @small-width;
+  }
+  #footer {
     width: @small-width;
   }
 
-  .order{
+  .order {
     width: 50%;
     @main-font: 12px;
-    .order-label{
+    .order-label {
 
-      #zamov{
+      #zamov {
 
-        #za{
+        #za {
           font-size: @main-font;
         }
       }
     }
 
-    .check{
+    .check {
 
-      .sum{
+      .sum {
         padding-top: 10px;
         font-size: @main-font;
 
-        #price{
+        #price {
           padding-top: 0;
         }
 
