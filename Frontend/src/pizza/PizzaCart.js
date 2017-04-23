@@ -49,7 +49,7 @@ function addToCart(pizza, size) {
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
     //TODO: треба зробити
-
+    // fadeOut();
     for(var i = Cart.length - 1; i >= 0; i--) {
         if(Cart[i].price == cart_item.price && Cart[i].pizza.title == cart_item.pizza.title) {
             Cart.splice(i, 1);

@@ -129,7 +129,7 @@ body {
     height: 300px;
     #map {
       margin-top: 25px;
-      //height: 250px;
+      height: 80%;
     }
   }
 
@@ -229,6 +229,9 @@ body {
       #info-pizza {
         height: 100%;
         color: #ec6a1c;
+        .inf{
+          font-size: 18px;
+        }
 
         #size-weight-price {
           height: 30%;
@@ -239,6 +242,27 @@ body {
           margin-top: 2%;
           height: 30%;
 
+          .minus {
+            color: white;
+            background-color: rgb(103, 181, 71);
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+          }
+
+          .minus:hover {
+            background-color: rgb(103, 156, 81);
+            transition: background-color 0.5s ease;
+          }
+          .minus:active {
+            background-color: #69a053;
+          }
+          .plus {
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+          }
         }
       }
 
@@ -304,6 +328,16 @@ input::-webkit-inner-spin-button {
     }
   }
 
+}
+
+@media only screen and (min-height: 1200px) {
+  #wall {
+    .map-div{
+      #map{
+        height: 1000px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1200px) {

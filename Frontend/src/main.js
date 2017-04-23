@@ -3,7 +3,14 @@
  */
 
 $(function () {
-    //This code will execute when the page is ready
+
+    $('#but').click(function () {
+        window.location = "order.html";
+    });
+
+
+
+//This code will execute when the page is ready
     var PizzaMenu = require('./pizza/PizzaMenu');
     var PizzaCart = require('./pizza/PizzaCart');
     var Pizza_List = require('./Pizza_List');
@@ -14,8 +21,6 @@ $(function () {
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
         $(".minus-plus-delete").hide();
-        $("#wall").height($(window).height());
-        $("#map").height($(window).height() - 410); // меняет высоту карты после аплоада страницы (нужен аплоад)
     });
 
     $('#success-button').click(function () {
@@ -75,4 +80,5 @@ $(function () {
     $("#adress").blur(function () {
         maps.cal($('#adress').val());
     });
-});
+})
+;
